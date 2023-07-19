@@ -40,23 +40,40 @@
             </section>
             <section>
                 <h2>Skills</h2>
+                {% if data_projects.skills %}
                 <ul>
-                    <li>
-                        <h4>HTML</h4>
-                        <p><a href="{{ links.html_project_1 }}" target="_blank">{{ data_projects.projects_html[0] }}</a>
-                        </p>
-                    </li>
-                    <li>
-                        <h4>Python</h4>
-                        <p><a href="{{ links.python_project_1 }}" target="_blank">{{ data_projects.projects_python[0]
-                                }}</a></p>
-                    </li>
-                    <li>
-                        <h4>Java</h4>
-                        <p><a href="{{ links.java_project_1 }}" target="_blank">{{ data_projects.projects_java[0] }}</a>
-                        </p>
-                    </li>
+                    {% for skill in data_projects.skills %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
                 </ul>
+                {% else %}
+                <h2>No existen skills</h2>
+                {% endif %}
+            </section>
+
+            <section>
+                <h2>Proyectos</h2>
+                {% if data_projects.projects_html %}
+                <ul>
+                    {% for project in data_projects.projects_html %}
+                    <li><a href="{{ links.html_project_1 }}" target="_blank">{{ project }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% if data_projects.projects_python %}
+                <ul>
+                    {% for project in data_projects.projects_python %}
+                    <li><a href="{{ links.python_project_1 }}" target="_blank">{{ project }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% if data_projects.projects_java %}
+                <ul>
+                    {% for project in data_projects.projects_java %}
+                    <li><a href="{{ links.java_project_1 }}" target="_blank">{{ project }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
             </section>
         </main>
     </div>
