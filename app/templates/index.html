@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ data.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="curriculum-vitae">
+        <main class="box-information">
+            <h1>
+                <section>
+                    <img src="{{ url_for('static', filename='images/busto.png') }}" alt="Mi foto" />
+                </section>
+                {{ personal_data.full_name }}
+            </h1>
+            <hr />
+            <section>
+                <h2>Datos Personales</h2>
+                <p><span>Edad</span>: {{ personal_data.age }}</p>
+                <p><span>Fecha de nacimiento</span>: {{ personal_data.date }}</p>
+                <p><span>Email</span>: {{ personal_data.email }}</p>
+                <p><span>Celular</span>: {{ personal_data.phone_number }}</p>
+            </section>
+            <section>
+                <h2>Educación</h2>
+                <ul>
+                    <li>
+                        <h3>Bachiller en Ciencias</h3>
+                        <p>{{ personal_data.school }}</p>
+                    </li>
+                    <li>
+                        <h3>Universidad</h3>
+                        <p>{{ personal_data.university }}</p>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <ul>
+                    <li>
+                        <h4>HTML</h4>
+                        <p><a href="{{ links.html_project_1 }}" target="_blank">{{ data_projects.projects_html[0] }}</a>
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Python</h4>
+                        <p><a href="{{ links.python_project_1 }}" target="_blank">{{ data_projects.projects_python[0]
+                                }}</a></p>
+                    </li>
+                    <li>
+                        <h4>Java</h4>
+                        <p><a href="{{ links.java_project_1 }}" target="_blank">{{ data_projects.projects_java[0] }}</a>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
