@@ -18,6 +18,7 @@
                 {{ personal_data.full_name }}
             </h1>
             <hr />
+            {% block personal_info %}
             <section>
                 <h2>Datos Personales</h2>
                 <p><span>Edad</span>: {{ personal_data.age }}</p>
@@ -25,6 +26,9 @@
                 <p><span>Email</span>: {{ personal_data.email }}</p>
                 <p><span>Celular</span>: {{ personal_data.phone_number }}</p>
             </section>
+            {% endblock %}
+
+            {% block education %}
             <section>
                 <h2>Educación</h2>
                 <ul>
@@ -38,6 +42,9 @@
                     </li>
                 </ul>
             </section>
+            {% endblock %}
+
+            {% block skills %}
             <section>
                 <h2>Skills</h2>
                 {% if data_projects.skills %}
@@ -50,7 +57,9 @@
                 <h2>No existen skills</h2>
                 {% endif %}
             </section>
+            {% endblock %}
 
+            {% block projects %}
             <section>
                 <h2>Proyectos</h2>
                 {% if data_projects.projects_html %}
@@ -75,6 +84,7 @@
                 </ul>
                 {% endif %}
             </section>
+            {% endblock %}
         </main>
     </div>
 </body>
